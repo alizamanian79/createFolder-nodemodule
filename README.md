@@ -6,7 +6,7 @@
 First, you should install fs , path and express into your backend project:
 
 ```shell
-npm i fs path
+npm i fs path express
 ```
 
 Seccond , Create uploads folder into your root direction.
