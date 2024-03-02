@@ -1,12 +1,7 @@
-# createFolder-nodemodule
- Use Create folder as module and enjoy
-
-
-
 First, you should install fs , path and express into your backend project:
 
 ```shell
-npm i fs path express
+npm i fs path
 ```
 
 Seccond , Create uploads folder into your root direction.
@@ -14,16 +9,24 @@ Seccond , Create uploads folder into your root direction.
 Third , require createFolder into your Router
 
 ```shell
-const createFolder = require('yourfolder/createFolder/index');
+const folderManager =require("../../publicJS/folderManager/index")
+const {createFolder,deleteFolder} = folderManager;
 ```
 
 and use it like this in your Router:
 
 ```shell
 
-router.post('/yourApi', async(req, res) => {
-  createFolder('myFolder', `uploads/`, res);
+//CreateFolder
+router.post('/createFolder', async(req, res) => {
+   createFolder('myFolder', `uploads/`, res)
 });
+
+
+//Delete Folder
+router.post('/deleteFolder', async(req, res) => {
+    deleteFolder('myFolder', `uploads/`, res)
+ });
 
 ```
 
